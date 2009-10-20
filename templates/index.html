@@ -1,9 +1,29 @@
-{% if latest_poll_list %}
-    <ul>
-    {% for poll in latest_poll_list %}
-        <li>{{ poll.question }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <link rel="icon" href="{{ img_dir }}/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="{{ img_dir }}/favicon.ico" type="image/x-icon" />
+        {% block css %}{% endblock %}
+        
+		<title>Timekeeper</title>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+
+        
+            <div id="content">
+                <div id="alpha-bar"></div>
+            
+                {% block body %}{% endblock %}
+                <div style="clear: both;"></div>
+            </div>
+
+        </div>
+    </body>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    {% block js %}{% endblock %}
+
+</html>
